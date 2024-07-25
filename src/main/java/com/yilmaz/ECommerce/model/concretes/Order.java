@@ -2,8 +2,11 @@ package com.yilmaz.ECommerce.model.concretes;
 
 
 import jakarta.persistence.*;
+import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.Fetch;
 
 
 import java.util.Date;
@@ -19,8 +22,13 @@ public class Order {
     private Long id;
 
     private String orderNumber;
+
+    @Temporal(TemporalType.TIMESTAMP)
     private Date orderDate;
-    private String status;
+
+    @Enumerated(EnumType.STRING)
+    private OrderStatus status;
+
 
     @ManyToOne
     @JoinColumn(name = "user_id")
