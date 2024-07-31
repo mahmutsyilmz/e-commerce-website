@@ -1,9 +1,6 @@
 package com.yilmaz.ECommerce.dto.responses.orderReponses;
 
-import com.yilmaz.ECommerce.dto.requests.orderItemRequests.CreateOrderItemRequest;
 import com.yilmaz.ECommerce.dto.responses.orderItemResponses.OrderItemDto;
-import com.yilmaz.ECommerce.model.concretes.OrderItem;
-import com.yilmaz.ECommerce.model.concretes.User;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
@@ -14,7 +11,7 @@ import java.util.List;
 @Data
 @Getter
 @Setter
-public class GetAllOrdersResponse {
+public class GetAllOrdersByUserIdResponse {
     private Long id;
     private String orderNumber;
     private Date orderDate;
@@ -22,5 +19,6 @@ public class GetAllOrdersResponse {
     private String userEmail;
     private List<OrderItemDto> orderItems;
     private double totalPrice;
+
 
 }

@@ -1,11 +1,10 @@
 package com.yilmaz.ECommerce.model.concretes;
 
-
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-;
+
 import java.util.List;
 
 @Table(name = "categories")

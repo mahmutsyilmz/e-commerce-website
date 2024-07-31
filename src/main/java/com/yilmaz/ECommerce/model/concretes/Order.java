@@ -21,7 +21,7 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String orderNumber;
+    private Long orderNumber;
 
     @Temporal(TemporalType.TIMESTAMP)
     private Date orderDate;
@@ -29,13 +29,13 @@ public class Order {
     @Enumerated(EnumType.STRING)
     private OrderStatus status;
 
-
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
 
     @OneToMany(mappedBy = "order")
     private List<OrderItem> orderItems;
+
 
 
 }

@@ -1,6 +1,7 @@
 package com.yilmaz.ECommerce.controller;
 
 import com.yilmaz.ECommerce.dto.requests.orderRequests.CreateOrderRequest;
+import com.yilmaz.ECommerce.dto.requests.orderRequests.UpdateOrderStatusRequest;
 import com.yilmaz.ECommerce.service.abstracts.OrderService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -25,9 +26,15 @@ public class OrderController {
         return ResponseEntity.ok(request);
     }
 
-//    @PostMapping("/updateOrder/{id}")
-//    public ResponseEntity<?> updateOrder(@PathVariable Long id,@RequestBody UpdateOrderRequest request){
-//        orderService.updateOrder(request);
-//        return ResponseEntity.ok(request);
-//    }
+    @PostMapping("/updateOrderStatus/{id}")
+    public ResponseEntity<?> updateOrderStatus(@PathVariable Long id, @RequestBody UpdateOrderStatusRequest request){
+        orderService.updateOrderStatus(id, request);
+        return ResponseEntity.ok(request);
+    }
+
+    @GetMapping("/getOrdersByUserId/{id}")
+    public ResponseEntity<?> getOrdersByUserId(@PathVariable Long id){
+        return ResponseEntity.ok(orderService.getOrdersByUserId(id));
+    }
+
 }
