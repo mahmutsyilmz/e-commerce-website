@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Products</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+<h2>Kullanıcı Bilgileri</h2>
+<p>Kullanıcı Adı: <span th:text="${user.getUsername()}"></span></p>
+<p>Adı: <span th:text="${user.getName()}"></span></p>
+<p>Soyadı: <span th:text="${user.getSurname()}"></span></p>
+<p>Email: <span th:text="${user.getEmail()}"></span></p>
+<p>Adres: <span th:text="${user.getAddress()}"></span></p>
+<!-- Aktif Sipariş -->
+<div>
+    <h2>Aktif Sipariş</h2>
+    <p th:if="${activeOrder == null}">Aktif bir siparişiniz yok.</p>
+    <div th:if="${activeOrder != null}">
+        <!-- Ödeme Yap butonu -->
+        <form th:action="@{/api/users/payment/pay}" method="get">
+            <input type="hidden" th:value="${activeOrder.id}" name="orderId">
+            <input type="submit" value="Pay Order">
+        </form>
+    </div>
+    <div th:if="${activeOrder != null}">
+        <p>Sipariş Tarihi: <span th:text="${activeOrder.orderDate}"></span></p>
+        <p>Sipariş Durumu: <span th:text="${activeOrder.status}"></span></p>
+
+        <!-- Sipariş Öğeleri -->
+        <h3>Sipariş Öğeleri</h3>
+        <ul>
+            <li th:each="item : ${activeOrder.orderItems}">
+                <span th:text="${item.getProduct().getName()}">Product Name</span> -
+                <span th:text="${item.quantity}">Quantity</span> -
+                <span th:text="${item.price}">Price</span>
+                <!-- Delete Order Item butonu -->
+                <form th:action="@{/api/users/products/deleteOrderItem}" method="post">
+                    <input type="hidden" th:value="${item.id}" name="orderItemId">
+                    <input type="submit" value="Delete">
+                </form>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!-- Geçmiş Siparişleri Göster butonu -->
+<form th:action="@{/api/users/products/getAllOrdersByUserId}" method="get">
+    <input type="submit" value="Show Past Orders">
+</form>
+
+<!-- Ürün listesi -->
+<table>
+    <thead>
+    <tr>
+        <th>Product Name</th>
+        <th>Price</th>
+        <th>Description</th>
+        <th>Stock</th>
+        <th>Category Name</th>
+        <th>Add to Order</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="product : ${products}">
+        <td th:text="${product.getName()}">Product Name</td>
+        <td th:text="${product.getPrice()}">Price</td>
+        <td th:text="${product.getDescription()}"></td>
+        <td th:text="${product.getStock()}"></td>
+        <td th:text="${product.getCategoryName()}"></td>
+        <td>
+            <!-- Add to Order butonu -->
+            <form th:action="@{/api/users/products/createOrderItem}" method="post">
+                <input type="hidden" th:value="${product.id}" name="productId">
+<!--                <input type="hidden" th:value="${order.id}" name="orderId">-->
+                <input type="number" id="quantity" name="quantity" min="1" required>
+                <input type="submit" value="Add to Order">
+            </form>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

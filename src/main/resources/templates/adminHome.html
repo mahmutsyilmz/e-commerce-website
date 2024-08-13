@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Admin Panel</title>
+    <link rel="stylesheet" th:href="@{/styles.css}">
+</head>
+<body>
+<h1>Admin Panel</h1>
+<button th:onclick="'window.location.href=\'/api/orders/getAll\''">Order Management</button>
+<button th:onclick="'window.location.href=\'/api/products/getAll\''">Product Management</button>
+<button th:onclick="'window.location.href=\'/api/categories/getAll\''">Category Management</button>
+</body>
+</html>

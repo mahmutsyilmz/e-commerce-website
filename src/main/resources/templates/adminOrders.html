@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order List</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<h1>Order List</h1>
+
+<!-- Order Ekle butonu -->
+<a href="/api/orders/createOrder" class="btn btn-primary">Order Ekle</a>
+
+<table>
+    <thead>
+    <tr>
+        <th>Order Number</th>
+        <th>Order Date</th>
+        <th>Status</th>
+        <th>User Email</th>
+        <th>Total Price</th>
+        <td>Payment Type</td>
+        <td>Address</td>
+        <th>Order Items</th>
+        <th>Update Status</th>
+        <th>Delete</th>
+        <th>Add Order Item</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="order : ${orders}">
+        <td th:text="${order.id}">Order Number</td>
+        <td th:text="${order.orderDate}">Order Date</td>
+        <td th:text="${order.status}">Status</td>
+        <td th:text="${order.userEmail}">User Email</td>
+        <td th:text="${order.totalPrice}">Total Price</td>
+        <td th:text="${order.paymentType}">Payment Type</td>
+        <td th:text="${order.address}">Address</td>
+        <td>
+            <ul>
+                <li th:each="item : ${order.orderItems}">
+                    <span th:text="${item.productName}">Product Name</span> -
+                    <span th:text="${item.quantity}">Quantity</span> -
+                    <span th:text="${item.price}">Price</span>
+                    <!-- Delete Order Item butonu -->
+                    <form th:if="${item != null}" th:action="@{/api/orderItems/deleteOrderItem/{id}(id=${item?.id})}" method="post">
+                        <input type="submit" value="Delete" class="btn btn-primary">
+                    </form>
+                </li>
+            </ul>
+        </td>
+        <td>
+            <!-- Update Status butonu -->
+            <a th:href="@{/api/orders/updateOrderStatus/{id}(id=${order.id})}" class="btn btn-primary">Update Status</a>
+        </td>
+        <td>
+            <!-- Delete butonu -->
+            <form th:action="@{/api/orders/deleteOrder/{id}(id=${order.id})}" method="post">
+                <input type="submit" value="Delete" class="btn btn-primary">
+            </form>
+        </td>
+        <td>
+            <!-- Add Order Item butonu -->
+            <a th:href="@{/api/orderItems/createOrderItem/{id}(id=${order.id})}" class="btn btn-primary">Add Order Item</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

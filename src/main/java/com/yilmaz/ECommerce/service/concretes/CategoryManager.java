@@ -1,18 +1,16 @@
 package com.yilmaz.ECommerce.service.concretes;
 
-import com.yilmaz.ECommerce.dto.requests.categoryRequests.CreateCategoryRequest;
-import com.yilmaz.ECommerce.dto.requests.categoryRequests.DeleteCategoryRequest;
-import com.yilmaz.ECommerce.dto.requests.categoryRequests.UpdateCategoryRequest;
-import com.yilmaz.ECommerce.dto.responses.categoryResponses.GetAllCategoriesResponse;
-import com.yilmaz.ECommerce.dto.responses.categoryResponses.GetAllCategoriesWithProducts;
-import com.yilmaz.ECommerce.dto.responses.categoryResponses.GetCategoriesByNameResponse;
-import com.yilmaz.ECommerce.dto.responses.categoryResponses.GetCategoryByIdResponse;
-import com.yilmaz.ECommerce.mapper.ModelMapperService;
+import com.yilmaz.ECommerce.model.dto.requests.categoryRequests.CreateCategoryRequest;
+import com.yilmaz.ECommerce.model.dto.requests.categoryRequests.UpdateCategoryRequest;
+import com.yilmaz.ECommerce.model.dto.responses.categoryResponses.GetAllCategoriesResponse;
+import com.yilmaz.ECommerce.model.dto.responses.categoryResponses.GetAllCategoriesWithProducts;
+import com.yilmaz.ECommerce.model.dto.responses.categoryResponses.GetCategoriesByNameResponse;
+import com.yilmaz.ECommerce.model.dto.responses.categoryResponses.GetCategoryByIdResponse;
+import com.yilmaz.ECommerce.core.mapper.ModelMapperService;
 import com.yilmaz.ECommerce.model.concretes.Category;
 import com.yilmaz.ECommerce.model.concretes.Product;
 import com.yilmaz.ECommerce.repository.abstracts.CategoryRepository;
 import com.yilmaz.ECommerce.service.abstracts.CategoryService;
-import org.modelmapper.ModelMapper;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
@@ -48,10 +46,9 @@ public class CategoryManager implements CategoryService {
     }
 
     @Override
-    public ResponseEntity<Void> deleteCategory(DeleteCategoryRequest request) {
-        Category category = this.categoryRepository.findById(request.getId()).orElseThrow(() -> new IllegalArgumentException("Category not found!"));
+    public ResponseEntity<Void> deleteCategory(Long id) {
+        Category category = this.categoryRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Category not found!"));
         this.categoryRepository.delete(category);
-
         return ResponseEntity.ok().build();
     }
 
@@ -74,13 +71,14 @@ public class CategoryManager implements CategoryService {
     }
 
     @Override
-    public ResponseEntity<List<GetAllCategoriesResponse>> getAllCategories() {
+    public List<GetAllCategoriesResponse> getAllCategories() {
         List<Category> categories = this.categoryRepository.findAll();
         List<GetAllCategoriesResponse> responses = categories.stream()
                 .map(category -> this.modelMapperService.forResponse().map(category, GetAllCategoriesResponse.class))
                 .toList();
 
-        return ResponseEntity.ok(responses);
+
+        return responses;
 
     }
 

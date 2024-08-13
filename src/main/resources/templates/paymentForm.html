@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Payment</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<h2>Payment</h2>
+<form action="#" th:action="@{/api/users/payment/pay}" th:object="${payment}" method="post">
+    <label for="paymentType">Payment Type:</label><br>
+    <select id="paymentType" th:field="*{paymentType}">
+        <option value="CREDIT_CARD">Credit Card</option>
+        <option value="CASH">Cash</option>
+
+    </select><br>
+    <input type="submit" value="Pay Order">
+</form>
+</body>
+</html>

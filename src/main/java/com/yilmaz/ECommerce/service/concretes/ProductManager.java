@@ -1,15 +1,16 @@
 package com.yilmaz.ECommerce.service.concretes;
 
-import com.yilmaz.ECommerce.dto.requests.productRequests.CreateProductRequest;
-import com.yilmaz.ECommerce.dto.requests.productRequests.DeleteProductRequest;
-import com.yilmaz.ECommerce.dto.requests.productRequests.UpdateProductRequest;
-import com.yilmaz.ECommerce.dto.responses.productResponses.GetAllProductsResponse;
-import com.yilmaz.ECommerce.dto.responses.productResponses.GetProductByCategoryIdResponse;
-import com.yilmaz.ECommerce.dto.responses.productResponses.GetProductByIdResponse;
-import com.yilmaz.ECommerce.dto.responses.productResponses.GetProductsByNameResponse;
-import com.yilmaz.ECommerce.mapper.ModelMapperService;
+import com.yilmaz.ECommerce.model.dto.requests.productRequests.CreateProductRequest;
+import com.yilmaz.ECommerce.model.dto.requests.productRequests.DeleteProductRequest;
+import com.yilmaz.ECommerce.model.dto.requests.productRequests.UpdateProductRequest;
+import com.yilmaz.ECommerce.model.dto.responses.productResponses.GetAllProductsResponse;
+import com.yilmaz.ECommerce.model.dto.responses.productResponses.GetProductByCategoryIdResponse;
+import com.yilmaz.ECommerce.model.dto.responses.productResponses.GetProductByIdResponse;
+import com.yilmaz.ECommerce.model.dto.responses.productResponses.GetProductsByNameResponse;
+import com.yilmaz.ECommerce.core.mapper.ModelMapperService;
 import com.yilmaz.ECommerce.model.concretes.Category;
 import com.yilmaz.ECommerce.model.concretes.Product;
+import com.yilmaz.ECommerce.repository.abstracts.CategoryRepository;
 import com.yilmaz.ECommerce.repository.abstracts.ProductRepository;
 import com.yilmaz.ECommerce.service.abstracts.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,17 +23,26 @@ import java.util.List;
 public class ProductManager implements ProductService {
     private final ProductRepository productRepository;
     private final ModelMapperService modelMapperService;
+    private final CategoryRepository categoryRepository;
 
     @Autowired
-    public ProductManager(ProductRepository productRepository, ModelMapperService modelMapperService){
+    public ProductManager(ProductRepository productRepository, ModelMapperService modelMapperService, CategoryRepository categoryRepository){
         this.productRepository = productRepository;
         this.modelMapperService = modelMapperService;
+        this.categoryRepository = categoryRepository;
     }
 
 
     @Override
     public ResponseEntity<?> addProduct(CreateProductRequest request) {
-        Product product = modelMapperService.forRequest().map(request, Product.class);
+        //map without using modelMapperService
+        Product product = new Product();
+        product.setName(request.getName());
+        product.setDescription(request.getDescription());
+        product.setPrice(request.getPrice());
+        product.setStock(request.getStock());
+        Category category = categoryRepository.findById(request.getCategoryId()).orElseThrow(() -> new IllegalArgumentException("Category not found!"));
+        product.setCategory(category);
         productRepository.save(product);
         return ResponseEntity.ok(request);
     }
@@ -40,7 +50,12 @@ public class ProductManager implements ProductService {
     @Override
     public ResponseEntity<?> updateProduct(Long id, UpdateProductRequest request) {
         Product product = productRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Product not found!"));
-        modelMapperService.forRequest().map(request, product);
+        product.setName(request.getName());
+        product.setDescription(request.getDescription());
+        product.setPrice(request.getPrice());
+        product.setStock(request.getStock());
+        Category category = categoryRepository.findById(request.getCategoryId()).orElseThrow(() -> new IllegalArgumentException("Category not found!"));
+        product.setCategory(category);
         productRepository.save(product);
         return ResponseEntity.ok(product);
     }
@@ -79,11 +94,11 @@ public class ProductManager implements ProductService {
     }
 
     @Override
-    public ResponseEntity<List<GetAllProductsResponse>> getAllProducts() {
+    public List<GetAllProductsResponse> getAllProducts() {
         List<Product> products = productRepository.findAll();
         List<GetAllProductsResponse> responses = products.stream()
                 .map(product -> modelMapperService.forResponse().map(product, GetAllProductsResponse.class))
                 .toList();
-        return ResponseEntity.ok(responses);
+        return responses;
     }
 }

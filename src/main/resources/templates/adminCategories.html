@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Admin Categories</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<h1>All Categories</h1>
+
+<!-- Category Ekle butonu -->
+<a href="/api/categories/create" class="btn btn-primary">Add Category</a>
+
+<table>
+    <tr>
+        <th>Category ID</th>
+        <th>Category Name</th>
+        <th>Delete</th>
+    </tr>
+    <tr th:each="category : ${categories}">
+        <td th:text="${category.id}"></td>
+        <td th:text="${category.name}"></td>
+        <td>
+            <!-- Delete Category butonu -->
+            <form th:action="@{/api/categories/delete/{id}(id=${category.id})}" method="post">
+                <input type="submit" value="Delete Category">
+            </form>
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>
