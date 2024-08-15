@@ -22,8 +22,8 @@ This project is a comprehensive e-commerce platform that allows users to browse 
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/your-username/ecommerce-platform.git
-   cd ecommerce-platform
+   git clone https://github.com/mahmutsyilmz/e-commerce-website.git
+   cd e-commerce-website
 
 2. **Set up the database**:
 
