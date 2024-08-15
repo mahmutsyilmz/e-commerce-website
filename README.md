@@ -4,11 +4,36 @@ This project is a comprehensive e-commerce platform that allows users to browse 
 
 ## Features
 
-- **User Registration and Login**: Secure user authentication with registration and login functionality.
-- **Product Management**: CRUD operations for products, with different categories and payment types.
-- **Order Management**: Users can place orders and track them. Admins can manage all orders and update statuses.
-- **Admin Panel**: A dedicated section for administrators to manage products, categories, and orders.
-- **Interceptors**: Custom interceptors like `AdminInterceptor` to secure admin routes.
+### User Registration and Login
+- **User Registration**: Users can register by providing their details through the registration page. An email verification link is sent to the user's email address. The user must verify their email to complete the registration process.
+- **Email Verification**: Users receive an email with a verification link. Only after clicking the link and verifying their email can they log in.
+- **User Login**: Users can log in with their credentials. Successful login redirects them to their product page or the admin panel if they have admin credentials. Users who have not verified their email cannot log in.
+
+### Product Management
+- **Product Listing**: Users can view a list of all available products.
+- **Product Search**: Users can search for products by name.
+- **Add to Order**: Users can add products to their current order.
+
+### Order Management
+- **Place Order**: Users can place an order for products added to their cart.
+- **Track Orders**: Users can view their order history and track the status of their orders.
+- **Update Order Status**: Admins can update the status of orders.
+
+### Admin Panel
+- **Manage Products**: Admins can create, update, and delete products.
+- **Manage Categories**: Admins can create, update, and delete product categories.
+- **Manage Orders**: Admins can view and manage all orders, including updating their statuses.
+
+### Interceptors
+- **Admin Interceptor**: Custom interceptor to secure admin routes and ensure only authorized users can access admin pages.
+
+### Payment Processing
+- **Payment Form**: Users can access a payment form to pay for their orders.
+- **Process Payment**: Payments are processed and the active order is cleared upon successful payment.
+
+### User Order Management
+- **View Orders**: Users can view their past orders and their statuses.
+- **Delete Order Item**: Users can remove items from their order.
 
 ## Technologies Used
 
