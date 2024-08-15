@@ -49,7 +49,7 @@ This project is a comprehensive e-commerce platform that allows users to browse 
 Here are some screenshots showcasing the main features:
 
 - **Admin Panel**:
-  ![Admin Dashboard](https://github.com/mahmutsyilmz/e-commerce-website/blob/feature/thymeleaf-email-payment/images/adminPanel.png)
+  ![Admin Dashboard](images/adminPanel.PNG)
 
 - **Order Management**:
   ![Order Management Screen](https://github.com/mahmutsyilmz/e-commerce-website/blob/feature/thymeleaf-email-payment/images/ordersPanel.png)
