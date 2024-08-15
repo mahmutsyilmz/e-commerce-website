@@ -1,0 +1,361 @@
+Folder PATH listing
+Volume serial number is 36AB-9C98
+C:.
+|   .gitignore
+|   E-Commerce.iml
+|   HELP.md
+|   mvnw
+|   mvnw.cmd
+|   output.txt
+|   pom.xml
+|   
++---.idea
+|   |   .gitignore
+|   |   compiler.xml
+|   |   encodings.xml
+|   |   jarRepositories.xml
+|   |   misc.xml
+|   |   modules.xml
+|   |   uiDesigner.xml
+|   |   vcs.xml
+|   |   workspace.xml
+|   |   
+|   +---copilot
+|   |   \---chatSessions
+|   |       |   00000000000.xd
+|   |       |   00000000800.xd
+|   |       |   xd.lck
+|   |       |   
+|   |       \---blobs
+|   |               version
+|   |               
+|   \---httpRequests
+|           2024-08-14T154443.400.json
+|           http-client.cookies
+|           http-requests-log.http
+|           
++---.mvn
+|   \---wrapper
+|           maven-wrapper.properties
+|           
++---logs
+|       ecommerce.log
+|       ecommerce.log.2024-08-08.0.gz
+|       ecommerce.log.2024-08-13.0.gz
+|       ecommerce.log.2024-08-14.0.gz
+|       
++---src
+|   +---main
+|   |   +---java
+|   |   |   \---com
+|   |   |       \---yilmaz
+|   |   |           \---ECommerce
+|   |   |               |   ECommerceApplication.java
+|   |   |               |   
+|   |   |               +---config
+|   |   |               |       WebConfig.java
+|   |   |               |       
+|   |   |               +---controller
+|   |   |               |   +---adminController
+|   |   |               |   |       AdminController.java
+|   |   |               |   |       AdminsCategoryController.java
+|   |   |               |   |       AdminsOrderController.java
+|   |   |               |   |       AdminsOrderItemController.java
+|   |   |               |   |       AdminsProductController.java
+|   |   |               |   |       
+|   |   |               |   \---userController
+|   |   |               |           UserController.java
+|   |   |               |           UsersPaymentController.java
+|   |   |               |           UsersProductController.java
+|   |   |               |           
+|   |   |               +---core
+|   |   |               |   \---mapper
+|   |   |               |           ModelMapperManager.java
+|   |   |               |           ModelMapperService.java
+|   |   |               |           
+|   |   |               +---interceptor
+|   |   |               |       AdminInterceptor.java
+|   |   |               |       
+|   |   |               +---model
+|   |   |               |   +---abstracts
+|   |   |               |   +---concretes
+|   |   |               |   |       Category.java
+|   |   |               |   |       Order.java
+|   |   |               |   |       OrderItem.java
+|   |   |               |   |       OrderStatus.java
+|   |   |               |   |       Payment.java
+|   |   |               |   |       PaymentType.java
+|   |   |               |   |       Product.java
+|   |   |               |   |       User.java
+|   |   |               |   |       
+|   |   |               |   \---dto
+|   |   |               |       +---requests
+|   |   |               |       |   +---categoryRequests
+|   |   |               |       |   |       CreateCategoryRequest.java
+|   |   |               |       |   |       DeleteCategoryRequest.java
+|   |   |               |       |   |       UpdateCategoryRequest.java
+|   |   |               |       |   |       
+|   |   |               |       |   +---orderItemRequests
+|   |   |               |       |   |       CreateOrderItemRequest.java
+|   |   |               |       |   |       
+|   |   |               |       |   +---orderRequests
+|   |   |               |       |   |       CreateOrderRequest.java
+|   |   |               |       |   |       UpdateOrderStatusRequest.java
+|   |   |               |       |   |       
+|   |   |               |       |   +---paymentRequests
+|   |   |               |       |   |       PaymentRequest.java
+|   |   |               |       |   |       
+|   |   |               |       |   +---productRequests
+|   |   |               |       |   |       CreateProductRequest.java
+|   |   |               |       |   |       DeleteProductRequest.java
+|   |   |               |       |   |       UpdateProductRequest.java
+|   |   |               |       |   |       
+|   |   |               |       |   \---userRequests
+|   |   |               |       |           LoginRequest.java
+|   |   |               |       |           RegisterRequest.java
+|   |   |               |       |           
+|   |   |               |       \---responses
+|   |   |               |           +---categoryResponses
+|   |   |               |           |       GetAllCategoriesResponse.java
+|   |   |               |           |       GetAllCategoriesWithProducts.java
+|   |   |               |           |       GetCategoriesByNameResponse.java
+|   |   |               |           |       GetCategoryByIdResponse.java
+|   |   |               |           |       
+|   |   |               |           +---orderItemResponses
+|   |   |               |           |       OrderItemDto.java
+|   |   |               |           |       
+|   |   |               |           +---orderReponses
+|   |   |               |           |       GetAllOrdersByUserIdResponse.java
+|   |   |               |           |       GetAllOrdersResponse.java
+|   |   |               |           |       
+|   |   |               |           \---productResponses
+|   |   |               |                   GetAllProductsResponse.java
+|   |   |               |                   GetProductByCategoryIdResponse.java
+|   |   |               |                   GetProductByIdResponse.java
+|   |   |               |                   GetProductsByNameResponse.java
+|   |   |               |                   
+|   |   |               +---repository
+|   |   |               |   +---abstracts
+|   |   |               |   |       CategoryRepository.java
+|   |   |               |   |       OrderItemRepository.java
+|   |   |               |   |       OrderRepository.java
+|   |   |               |   |       PaymentRepository.java
+|   |   |               |   |       ProductRepository.java
+|   |   |               |   |       UserRepository.java
+|   |   |               |   |       
+|   |   |               |   \---concretes
+|   |   |               \---service
+|   |   |                   +---abstracts
+|   |   |                   |       CategoryService.java
+|   |   |                   |       OrderItemService.java
+|   |   |                   |       OrderService.java
+|   |   |                   |       PaymentService.java
+|   |   |                   |       ProductService.java
+|   |   |                   |       
+|   |   |                   \---concretes
+|   |   |                           CategoryManager.java
+|   |   |                           EmailSenderService.java
+|   |   |                           OrderItemManager.java
+|   |   |                           OrderManager.java
+|   |   |                           PaymentManager.java
+|   |   |                           ProductManager.java
+|   |   |                           UserManager.java
+|   |   |                           
+|   |   \---resources
+|   |       |   application.properties
+|   |       |   
+|   |       +---static
+|   |       |       styles.css
+|   |       |       
+|   |       \---templates
+|   |               adminCategories.html
+|   |               adminCreateCategory.html
+|   |               adminCreateOrder.html
+|   |               adminCreateOrderItem.html
+|   |               adminCreateProduct.html
+|   |               adminHome.html
+|   |               adminOrders.html
+|   |               adminProducts.html
+|   |               adminUpdateOrderStatus.html
+|   |               adminUpdateProduct.html
+|   |               login.html
+|   |               paymentForm.html
+|   |               register.html
+|   |               usersOrders.html
+|   |               usersProducts.html
+|   |               
+|   \---test
+|       \---java
+|           \---com
+|               \---yilmaz
+|                   \---ECommerce
+|                           ECommerceApplicationTests.java
+|                           
+\---target
+    |   E-Commerce-0.0.1-SNAPSHOT.jar
+    |   E-Commerce-0.0.1-SNAPSHOT.jar.original
+    |   
+    +---classes
+    |   |   application.properties
+    |   |   
+    |   +---com
+    |   |   \---yilmaz
+    |   |       \---ECommerce
+    |   |           |   ECommerceApplication.class
+    |   |           |   
+    |   |           +---config
+    |   |           |       WebConfig.class
+    |   |           |       
+    |   |           +---controller
+    |   |           |   +---adminController
+    |   |           |   |       AdminController.class
+    |   |           |   |       AdminsCategoryController.class
+    |   |           |   |       AdminsOrderController.class
+    |   |           |   |       AdminsOrderItemController.class
+    |   |           |   |       AdminsProductController.class
+    |   |           |   |       
+    |   |           |   \---userController
+    |   |           |           UserController.class
+    |   |           |           UsersPaymentController.class
+    |   |           |           UsersProductController.class
+    |   |           |           
+    |   |           +---core
+    |   |           |   \---mapper
+    |   |           |           ModelMapperManager.class
+    |   |           |           ModelMapperService.class
+    |   |           |           
+    |   |           +---interceptor
+    |   |           |       AdminInterceptor.class
+    |   |           |       
+    |   |           +---model
+    |   |           |   +---concretes
+    |   |           |   |       Category.class
+    |   |           |   |       Order.class
+    |   |           |   |       OrderItem.class
+    |   |           |   |       OrderStatus.class
+    |   |           |   |       Payment.class
+    |   |           |   |       PaymentType.class
+    |   |           |   |       Product.class
+    |   |           |   |       User.class
+    |   |           |   |       
+    |   |           |   \---dto
+    |   |           |       +---requests
+    |   |           |       |   +---categoryRequests
+    |   |           |       |   |       CreateCategoryRequest.class
+    |   |           |       |   |       DeleteCategoryRequest.class
+    |   |           |       |   |       UpdateCategoryRequest.class
+    |   |           |       |   |       
+    |   |           |       |   +---orderItemRequests
+    |   |           |       |   |       CreateOrderItemRequest.class
+    |   |           |       |   |       
+    |   |           |       |   +---orderRequests
+    |   |           |       |   |       CreateOrderRequest.class
+    |   |           |       |   |       UpdateOrderStatusRequest.class
+    |   |           |       |   |       
+    |   |           |       |   +---paymentRequests
+    |   |           |       |   |       PaymentRequest.class
+    |   |           |       |   |       
+    |   |           |       |   +---productRequests
+    |   |           |       |   |       CreateProductRequest.class
+    |   |           |       |   |       DeleteProductRequest.class
+    |   |           |       |   |       UpdateProductRequest.class
+    |   |           |       |   |       
+    |   |           |       |   \---userRequests
+    |   |           |       |           LoginRequest.class
+    |   |           |       |           RegisterRequest.class
+    |   |           |       |           
+    |   |           |       \---responses
+    |   |           |           +---categoryResponses
+    |   |           |           |       GetAllCategoriesResponse.class
+    |   |           |           |       GetAllCategoriesWithProducts.class
+    |   |           |           |       GetCategoriesByNameResponse.class
+    |   |           |           |       GetCategoryByIdResponse.class
+    |   |           |           |       
+    |   |           |           +---orderItemResponses
+    |   |           |           |       OrderItemDto.class
+    |   |           |           |       
+    |   |           |           +---orderReponses
+    |   |           |           |       GetAllOrdersByUserIdResponse.class
+    |   |           |           |       GetAllOrdersResponse.class
+    |   |           |           |       
+    |   |           |           \---productResponses
+    |   |           |                   GetAllProductsResponse.class
+    |   |           |                   GetProductByCategoryIdResponse.class
+    |   |           |                   GetProductByIdResponse.class
+    |   |           |                   GetProductsByNameResponse.class
+    |   |           |                   
+    |   |           +---repository
+    |   |           |   \---abstracts
+    |   |           |           CategoryRepository.class
+    |   |           |           OrderItemRepository.class
+    |   |           |           OrderRepository.class
+    |   |           |           PaymentRepository.class
+    |   |           |           ProductRepository.class
+    |   |           |           UserRepository.class
+    |   |           |           
+    |   |           \---service
+    |   |               +---abstracts
+    |   |               |       CategoryService.class
+    |   |               |       OrderItemService.class
+    |   |               |       OrderService.class
+    |   |               |       PaymentService.class
+    |   |               |       ProductService.class
+    |   |               |       
+    |   |               \---concretes
+    |   |                       CategoryManager.class
+    |   |                       EmailSenderService.class
+    |   |                       OrderItemManager.class
+    |   |                       OrderManager.class
+    |   |                       PaymentManager.class
+    |   |                       ProductManager.class
+    |   |                       UserManager.class
+    |   |                       
+    |   +---static
+    |   |       styles.css
+    |   |       
+    |   \---templates
+    |           adminCategories.html
+    |           adminCreateCategory.html
+    |           adminCreateOrder.html
+    |           adminCreateOrderItem.html
+    |           adminCreateProduct.html
+    |           adminHome.html
+    |           adminOrders.html
+    |           adminProducts.html
+    |           adminUpdateOrderStatus.html
+    |           adminUpdateProduct.html
+    |           login.html
+    |           paymentForm.html
+    |           register.html
+    |           usersOrders.html
+    |           usersProducts.html
+    |           
+    +---generated-sources
+    |   \---annotations
+    +---generated-test-sources
+    |   \---test-annotations
+    +---maven-archiver
+    |       pom.properties
+    |       
+    +---maven-status
+    |   \---maven-compiler-plugin
+    |       +---compile
+    |       |   \---default-compile
+    |       |           createdFiles.lst
+    |       |           inputFiles.lst
+    |       |           
+    |       \---testCompile
+    |           \---default-testCompile
+    |                   createdFiles.lst
+    |                   inputFiles.lst
+    |                   
+    +---surefire-reports
+    |       com.yilmaz.ECommerce.ECommerceApplicationTests.txt
+    |       TEST-com.yilmaz.ECommerce.ECommerceApplicationTests.xml
+    |       
+    \---test-classes
+        \---com
+            \---yilmaz
+                \---ECommerce
+                        ECommerceApplicationTests.class
+                        
