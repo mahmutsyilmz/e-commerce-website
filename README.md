@@ -52,28 +52,28 @@ Here are some screenshots showcasing the main features:
   ![Admin Dashboard](images/adminPanel.PNG)
 
 - **Order Management**:
-  ![Order Management Screen](https://github.com/mahmutsyilmz/e-commerce-website/blob/feature/thymeleaf-email-payment/images/ordersPanel.png)
+  ![Order Management Screen](images/ordersPanel.PNG)
 
 - **Update Order Status**:
-  ![Update Order Status](https://github.com/mahmutsyilmz/e-commerce-website/blob/feature/thymeleaf-email-payment/images/updateOrderStatus.png)  
+  ![Update Order Status](images/updateOrderStatus.PNG)  
 
 - **Product Management**:
-  ![Product Management Screen](https://github.com/mahmutsyilmz/e-commerce-website/blob/feature/thymeleaf-email-payment/images/productManagement.png)
+  ![Product Management Screen](images/productManagement.PNG)
 
 - **Products**:
-  ![Products Screen](https://github.com/mahmutsyilmz/e-commerce-website/blob/feature/thymeleaf-email-payment/images/admin-dashboard.png)
+  ![Products Screen](images/admin-dashboard.PNG)
 
 - **Add To Order**:
-  ![Adding Order A Product](https://github.com/mahmutsyilmz/e-commerce-website/blob/feature/thymeleaf-email-payment/images/addToOrder.PNG)
+  ![Adding Order A Product](images/addToOrder.PNG)
 
 - **After The Adding Order**:
-  ![Product Added To Order](https://github.com/mahmutsyilmz/e-commerce-website/blob/feature/thymeleaf-email-payment/images/afterAddToOrder.png)
+  ![Product Added To Order](images/afterAddToOrder.PNG)
 
 - **Pay The Order**:
-  ![Process Of Pay The Order Button](https://github.com/mahmutsyilmz/e-commerce-website/blob/feature/thymeleaf-email-payment/images/payToOrder.png)
+  ![Process Of Pay The Order Button](images/payToOrder.PNG)
 
 - **Show Past Order**:
-  ![Showing Past Orders](https://github.com/mahmutsyilmz/e-commerce-website/blob/feature/thymeleaf-email-payment/images/showPastOrders.png)
+  ![Showing Past Orders](himages/showPastOrders.PNG)
 
 
 
