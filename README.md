@@ -49,31 +49,31 @@ This project is a comprehensive e-commerce platform that allows users to browse 
 Here are some screenshots showcasing the main features:
 
 - **Admin Panel**:
-  ![Admin Dashboard](images/adminPanel.png)
+  ![Admin Dashboard](https://github.com/mahmutsyilmz/e-commerce-website/blob/feature/thymeleaf-email-payment/images/adminPanel.png)
 
 - **Order Management**:
-  ![Order Management Screen](images/ordersPanel.png)
+  ![Order Management Screen](https://github.com/mahmutsyilmz/e-commerce-website/blob/feature/thymeleaf-email-payment/images/ordersPanel.png)
 
 - **Update Order Status**:
-  ![Update Order Status](images/updateOrderStatus.png)  
+  ![Update Order Status](https://github.com/mahmutsyilmz/e-commerce-website/blob/feature/thymeleaf-email-payment/images/updateOrderStatus.png)  
 
 - **Product Management**:
-  ![Product Management Screen](images/productManagement.png)
+  ![Product Management Screen](https://github.com/mahmutsyilmz/e-commerce-website/blob/feature/thymeleaf-email-payment/images/productManagement.png)
 
 - **Products**:
-  ![Products Screen](images/admin-dashboard.png)
+  ![Products Screen](https://github.com/mahmutsyilmz/e-commerce-website/blob/feature/thymeleaf-email-payment/images/admin-dashboard.png)
 
 - **Add To Order**:
   ![Adding Order A Product](https://github.com/mahmutsyilmz/e-commerce-website/blob/feature/thymeleaf-email-payment/images/addToOrder.PNG)
 
 - **After The Adding Order**:
-  ![Product Added To Order](images/afterAddToOrder.png)
+  ![Product Added To Order](https://github.com/mahmutsyilmz/e-commerce-website/blob/feature/thymeleaf-email-payment/images/afterAddToOrder.png)
 
 - **Pay The Order**:
-  ![Process Of Pay The Order Button](images/payToOrder.png)
+  ![Process Of Pay The Order Button](https://github.com/mahmutsyilmz/e-commerce-website/blob/feature/thymeleaf-email-payment/images/payToOrder.png)
 
 - **Show Past Order**:
-  ![Showing Past Orders](images/showPastOrders.png)
+  ![Showing Past Orders](https://github.com/mahmutsyilmz/e-commerce-website/blob/feature/thymeleaf-email-payment/images/showPastOrders.png)
 
 
 
