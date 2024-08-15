@@ -43,3 +43,38 @@ This project is a comprehensive e-commerce platform that allows users to browse 
 
    - **User interface**: [http://localhost:8080/api/users/register]
    - **Admin panel**: [http://localhost:8080/api/admin/home]
+  
+## Screenshots
+
+Here are some screenshots showcasing the main features:
+
+- **Admin Panel**:
+  ![Admin Dashboard](images/adminPanel.png)
+
+- **Order Management**:
+  ![Order Management Screen](images/ordersPanel.png)
+
+- **Update Order Status**:
+  ![Update Order Status](images/updateOrderStatus.png)  
+
+- **Product Management**:
+  ![Product Management Screen](images/productManagement.png)
+
+- **Products**:
+  ![Products Screen](images/admin-dashboard.png)
+
+- **Add To Order**:
+  ![Adding Order A Product](images/addToOrder.png)
+
+- **After The Adding Order**:
+  ![Product Added To Order](images/afterAddToOrder.png)
+
+- **Pay The Order**:
+  ![Process Of Pay The Order Button](images/payToOrder.png)
+
+- **Show Past Order**:
+  ![Showing Past Orders](images/showPastOrders.png)
+
+
+
+
