@@ -1,8 +1,11 @@
 package com.yilmaz.ECommerce;
 
+import com.yilmaz.ECommerce.model.concretes.User;
 import com.yilmaz.ECommerce.service.concretes.EmailSenderService;
+import com.yilmaz.ECommerce.service.concretes.UserManager;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -25,6 +28,7 @@ public class ECommerceApplication {
 	ModelMapper modelMapper() {
 		return new ModelMapper();
 	}
+
 
 
 

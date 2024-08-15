@@ -30,10 +30,6 @@ public class UsersPaymentController {
     @PostMapping("/pay")
     public String processPayment(@ModelAttribute PaymentRequest request, HttpSession session) {
         Order activeOrder = (Order) session.getAttribute("activeOrder");
-        if (activeOrder == null) {
-            //error
-            return "redirect:/error?message=Order not found";
-        }
         request.setOrderId(activeOrder.getId());
         paymentService.pay(request);
         session.removeAttribute("activeOrder");

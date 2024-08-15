@@ -21,7 +21,7 @@ import java.util.stream.Collectors;
 public class CategoryManager implements CategoryService {
     private final CategoryRepository categoryRepository;
 
-    private ModelMapperService modelMapperService;
+    private final ModelMapperService modelMapperService;
 
     public CategoryManager(CategoryRepository categoryRepository, ModelMapperService modelMapperService) {
         this.categoryRepository = categoryRepository;

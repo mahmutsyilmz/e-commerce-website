@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Order Item</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<h2>Create Order Item</h2>
+<form action="#" th:action="@{/api/orderItems/createOrderItem}" th:object="${orderItem}" method="post">
+    <input type="hidden" th:field="*{orderId}">
+    <label for="productId">Product:</label><br>
+    <select id="productId" th:field="*{productId}">
+        <option th:each="product : ${products}" th:value="${product.id}" th:text="${product.name}"></option>
+    </select><br>
+    <label for="quantity">Quantity:</label><br>
+    <input type="number" id="quantity" th:field="*{quantity}"><br>
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>

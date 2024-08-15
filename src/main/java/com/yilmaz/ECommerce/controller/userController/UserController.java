@@ -13,17 +13,13 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 @RequestMapping("/api/users")
 public class UserController {
-    private final EmailSenderService emailSenderService;
+
     private final UserManager userManager;
 
     @Autowired
-    public UserController(EmailSenderService emailSenderService, UserManager userManager) {
-        this.emailSenderService = emailSenderService;
+    public UserController(UserManager userManager) {
         this.userManager = userManager;
     }
-
-
-
 
     @PostMapping("/register")
     public String register(@ModelAttribute User user){
@@ -40,12 +36,18 @@ public class UserController {
 
     @PostMapping("/login")
     public String login(@ModelAttribute User user, HttpSession session){
-        User loggedInUser = userManager.login(user);
-        if (loggedInUser != null && loggedInUser.isActive()){
-            session.setAttribute("user", loggedInUser);
-            return "redirect:/api/users/products/getAll";
+        if ("admin".equals(user.getUsername()) && "admin".equals(user.getPassword())) {
+            session.setAttribute("isAdmin", true);
+            return "redirect:/api/admin/home";
+        }else {
+            User loggedInUser = userManager.login(user);
+            if (loggedInUser != null && loggedInUser.isActive()){
+                session.setAttribute("user", loggedInUser);
+                return "redirect:/api/users/products/getAll";
+            }
+            return "redirect:/api/users/login";
         }
-        return "redirect:/api/users/login";
+
     }
 
     @GetMapping("/login")
@@ -54,6 +56,7 @@ public class UserController {
         model.addAttribute("user", user);
         return "login";
     }
+
 
 
     @GetMapping("/reg/{key}")

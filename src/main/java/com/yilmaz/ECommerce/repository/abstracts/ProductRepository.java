@@ -13,6 +13,7 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
 
     Optional<Product> findById (Long id);
 
+
     List<Product> findByNameContaining(String name);
     Product findCategoryById(Long categoryId);
 

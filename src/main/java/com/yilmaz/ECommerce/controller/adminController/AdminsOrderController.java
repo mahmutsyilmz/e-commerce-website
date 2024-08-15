@@ -21,24 +21,12 @@ public class AdminsOrderController {
 
 
 
-
-//    @GetMapping("/getAll")
-//    public ResponseEntity<?> getAllOrders() {
-//        return ResponseEntity.ok(orderService.getAllOrders());
-//    }
-
     @GetMapping("/getAll")
     public String getAllOrders(Model model) {
         List<GetAllOrdersResponse> orders = orderService.getAllOrders();
         model.addAttribute("orders", orders); // Burada "orders" anahtar kelimesini kullanıyoruz
         return "adminOrders"; // Bu "adminOrders.html" dosyasına yönlendirir
     }
-
-//    @PostMapping("/createOrder")
-//    public ResponseEntity<?> createOrder(@RequestBody CreateOrderRequest request){
-//        orderService.createOrder(request);
-//        return ResponseEntity.ok(request);
-//    }
 
     @PostMapping("/createOrder")
     public String createOrder(@ModelAttribute CreateOrderRequest request){
@@ -50,14 +38,9 @@ public class AdminsOrderController {
     public String createOrderPage(Model model){
         CreateOrderRequest request = new CreateOrderRequest();
         model.addAttribute("order", request);
-        return "createOrder";
+        return "adminCreateOrder";
     }
 
-//    @PostMapping("/updateOrderStatus/{id}")
-//    public ResponseEntity<?> updateOrderStatus(@PathVariable Long id, @RequestBody UpdateOrderStatusRequest request){
-//        orderService.updateOrderStatus(id, request);
-//        return ResponseEntity.ok(request);
-//    }
 
     @PostMapping("/updateOrderStatus/{id}")
     public String updateOrderStatus(@PathVariable Long id, @ModelAttribute UpdateOrderStatusRequest request){
@@ -70,7 +53,7 @@ public class AdminsOrderController {
         UpdateOrderStatusRequest request = new UpdateOrderStatusRequest();
         model.addAttribute("order", request);
         model.addAttribute("id", id); // id'yi model nesnesine ekliyoruz
-        return "updateOrderStatus";
+        return "adminUpdateOrderStatus";
     }
 
     @RequestMapping(value = "/deleteOrder/{id}", method = RequestMethod.POST)

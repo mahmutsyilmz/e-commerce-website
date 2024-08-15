@@ -76,21 +76,21 @@ public class ProductManager implements ProductService {
     }
 
     @Override
-    public ResponseEntity<List<GetProductsByNameResponse>> getProductsByName(String name) {
+    public List<GetProductsByNameResponse> getProductsByName(String name) {
         List<Product> products = productRepository.findByNameContaining(name);
         List<GetProductsByNameResponse> responses = products.stream()
                 .map(product -> modelMapperService.forResponse().map(product, GetProductsByNameResponse.class))
                 .toList();
-        return ResponseEntity.ok(responses);
+        return responses;
     }
 
     @Override
-    public ResponseEntity<List<GetProductByCategoryIdResponse>> getProductsByCategory(Long categoryId){
+    public List<GetProductByCategoryIdResponse> getProductsByCategory(Long categoryId){
         List<Product> products = productRepository.findByCategoryId(categoryId);
         List<GetProductByCategoryIdResponse> responses = products.stream()
                 .map(product -> modelMapperService.forResponse().map(product, GetProductByCategoryIdResponse.class))
                 .toList();
-        return ResponseEntity.ok(responses);
+        return responses;
     }
 
     @Override

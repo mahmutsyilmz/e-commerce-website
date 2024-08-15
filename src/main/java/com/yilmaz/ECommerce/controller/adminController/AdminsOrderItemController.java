@@ -21,11 +21,6 @@ public class AdminsOrderItemController {
         this.productService = productService;
     }
 
-//    @PostMapping("/createOrderItem")
-//    public ResponseEntity<?> createOrderItem(@RequestBody CreateOrderItemRequest request){
-//        orderItemService.createOrderItem(request);
-//        return ResponseEntity.ok(request);
-//    }
 
     @PostMapping("/createOrderItem")
     public String createOrderItem(@ModelAttribute CreateOrderItemRequest request){
@@ -42,7 +37,7 @@ public class AdminsOrderItemController {
         List<GetAllProductsResponse> products = productService.getAllProducts(); // Tüm ürünleri al
         model.addAttribute("products", products); // Ürünleri model nesnesine ekle
 
-        return "createOrderItem";
+        return "adminCreateOrderItem";
     }
 
     @PostMapping("/deleteOrderItem/{id}")

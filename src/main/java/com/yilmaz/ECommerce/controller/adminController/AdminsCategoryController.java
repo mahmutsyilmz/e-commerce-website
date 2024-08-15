@@ -34,7 +34,7 @@ public class AdminsCategoryController {
     public String createCategoryPage(Model model) {
         CreateCategoryRequest request = new CreateCategoryRequest();
         model.addAttribute("category", request);
-        return "createCategory";
+        return "adminCreateCategory";
     }
 
     @PostMapping("/create")
@@ -48,11 +48,6 @@ public class AdminsCategoryController {
         return "redirect:/api/categories/getAll";
     }
 
-    @GetMapping("/update/{id}")
-    public String updateCategoryPage(@PathVariable Long id) {
-        return "updateCategory";
-    }
-
     @PostMapping("/delete/{id}")
     public String deleteCategory(@PathVariable Long id) {
         categoryService.deleteCategory(id);
@@ -60,22 +55,22 @@ public class AdminsCategoryController {
     }
 
 
-    @GetMapping("/get/{id}")
-    public ResponseEntity<GetCategoryByIdResponse> getCategoryById(@PathVariable Long id) {
-        categoryService.getCategoryById(id);
-        return ResponseEntity.ok().build();
-    }
-
-    @GetMapping("/getByName/{name}")
-    public ResponseEntity<?> getCategoriesByName(@PathVariable String name) {
-        return ResponseEntity.ok(categoryService.getCategoriesByName(name));
-    }
-
-
-    @GetMapping("/getAllWithProducts")
-    public ResponseEntity<?> getAllCategoriesWithProducts() {
-        return ResponseEntity.ok(categoryService.getAllCategoriesWithProducts());
-    }
+//    @GetMapping("/get/{id}")
+//    public ResponseEntity<GetCategoryByIdResponse> getCategoryById(@PathVariable Long id) {
+//        categoryService.getCategoryById(id);
+//        return ResponseEntity.ok().build();
+//    }
+//
+//    @GetMapping("/getByName/{name}")
+//    public ResponseEntity<?> getCategoriesByName(@PathVariable String name) {
+//        return ResponseEntity.ok(categoryService.getCategoriesByName(name));
+//    }
+//
+//
+//    @GetMapping("/getAllWithProducts")
+//    public ResponseEntity<?> getAllCategoriesWithProducts() {
+//        return ResponseEntity.ok(categoryService.getAllCategoriesWithProducts());
+//    }
 
 
 }

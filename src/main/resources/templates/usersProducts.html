@@ -50,7 +50,11 @@
 <form th:action="@{/api/users/products/getAllOrdersByUserId}" method="get">
     <input type="submit" value="Show Past Orders">
 </form>
-
+<!-- İsim ile ürün arama -->
+<form th:action="@{/api/users/products/searchByName}" method="get">
+    <input type="text" id="name" name="name" required>
+    <input type="submit" value="Search">
+</form>
 <!-- Ürün listesi -->
 <table>
     <thead>

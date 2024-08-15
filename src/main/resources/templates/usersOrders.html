@@ -23,7 +23,7 @@
     <tr th:each="order : ${orders}">
         <td th:text="${order.orderDate}">Order Date</td>
         <td th:text="${order.status}">Status</td>
-        <td th:text="${order.getTotalPrice()}">Total Price</td>
+        <td th:text="${order.totalPrice}">Total Price</td>
         <td th:text="${order.paymentType}">Payment Type</td>
     </tr>
     </tbody>

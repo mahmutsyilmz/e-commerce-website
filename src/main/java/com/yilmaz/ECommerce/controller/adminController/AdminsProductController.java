@@ -60,15 +60,11 @@ public class AdminsProductController {
     @GetMapping("/getByName/{name}")
     public String getProductsByName(@PathVariable String name, Model model) {
 
-        List<GetProductsByNameResponse> products = productService.getProductsByName(name).getBody();
+        List<GetProductsByNameResponse> products = productService.getProductsByName(name);
         model.addAttribute("products", products);
 
         return "adminProducts";
     }
-
-
-
-
 
 
     @GetMapping("/getByCategory/{categoryId}")
