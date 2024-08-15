@@ -49,6 +49,7 @@ This project is a comprehensive e-commerce platform that allows users to browse 
 Here are some screenshots showcasing the main features:
 
 - **Admin Panel**:
+
   ![Admin Dashboard](images/adminPanel.PNG)
 
 - **Order Management**:
@@ -61,7 +62,7 @@ Here are some screenshots showcasing the main features:
   ![Product Management Screen](images/productManagement.PNG)
 
 - **Products**:
-  ![Products Screen](images/admin-dashboard.PNG)
+  ![Products Screen](images/usersProducts.PNG)
 
 - **Add To Order**:
   ![Adding Order A Product](images/addToOrder.PNG)
