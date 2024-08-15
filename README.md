@@ -64,7 +64,7 @@ Here are some screenshots showcasing the main features:
   ![Products Screen](images/admin-dashboard.png)
 
 - **Add To Order**:
-  ![Adding Order A Product](images/addToOrder.png)
+  ![Adding Order A Product](https://github.com/mahmutsyilmz/e-commerce-website/blob/feature/thymeleaf-email-payment/images/addToOrder.PNG)
 
 - **After The Adding Order**:
   ![Product Added To Order](images/afterAddToOrder.png)
