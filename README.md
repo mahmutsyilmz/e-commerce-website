@@ -70,10 +70,10 @@ Here are some screenshots showcasing the main features:
   ![Product Added To Order](images/afterAddToOrder.PNG)
 
 - **Pay The Order**:
-  ![Process Of Pay The Order Button](images/payToOrder.PNG)
+  ![Process Of Pay The Order Button](images/payOrderButton.PNG)
 
 - **Show Past Order**:
-  ![Showing Past Orders](himages/showPastOrders.PNG)
+  ![Showing Past Orders](images/showPastOrders.PNG)
 
 
 
